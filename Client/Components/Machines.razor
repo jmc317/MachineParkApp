@@ -1,0 +1,32 @@
+﻿<h3>Machines</h3>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Machine ID</th>
+            <th scope="col">Location</th>
+            <th scope="col">Date</th>
+            <th scope="col">Type</th>
+            <th scope="col">Status</th>
+            <th scope="col">View</th>
+            <th scope="col">Update</th>
+            <th scope="col">Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var machine in MachineList)
+        {
+            <tr>
+                <td scope="row">@machine.MachineID</td>
+                <td scope="row">@machine.Location</td>
+                <td scope="row">@machine.Date</td>
+                <td scope="row">@machine.MachineType</td>
+                <td scope="row">@machine.Status</td>
+                <td scope="row"><a href="@($"machineview/{machine.MachineID}")" class="btn btn-outline-primary">View</a></td>
+                <td scope="row"><a href="@($"machineupdate/{machine.MachineID}")" class="btn btn-outline-primary">Update</a></td>
+                <td scope="row"><a href="@($"machinedelete/{machine.MachineID}")" class="btn btn-outline-primary">Delete</a></td>
+
+            </tr>
+        }
+    </tbody>
+</table>
